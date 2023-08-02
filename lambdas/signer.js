@@ -26,16 +26,16 @@ exports.handler = async function(event) {
     try {
         const sqs = new AWS.SQS({apiVersion: "2012-11-05"});
 
-        const getUrl = await createPresignedUrlWithClientGET();
-        const postURL = await createPresignedUrlWithClientPost();
-        console.log(getUrl);
-        console.log(postURL);
+        const htmlURL = await createPresignedUrlWithClientGET();
+        const pdfURL = await createPresignedUrlWithClientPost();
+        console.log(htmlURL);
+        console.log(pdfURL);
 
-
+        // construct message to be sent to html-to-pdf-queue
         const message = {
           url: {
-            jsonFile: getUrl,
-            pdfDestination: postURL,
+            jsonFile: htmlURL,
+            pdfDestination: pdfURL,
           },
           reply: {
             sqsTopic: "https://sqs.us-east-2.amazonaws.com/263955829476/reports-service-attachments-handler",

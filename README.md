@@ -1,7 +1,6 @@
-# Welcome to your CDK TypeScript project
+# S3 signer and message sender
 
-You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`S3SignerStack`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+This application creates signed URLs for existing s3 resources, constructs a SQS message containing the signed URLs and throws the message on the queue.
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 

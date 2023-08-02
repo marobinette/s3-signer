@@ -1,6 +1,7 @@
 # S3 signer and message sender
 
-This application creates signed URLs for existing s3 resources, constructs a SQS message containing the signed URLs and throws the message on the queue.
+This application creates signed URLs for existing s3 resources, constructs a SQS message containing the signed URLs and throws the message on the queue,
+which triggers the creation of a PDF.
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 

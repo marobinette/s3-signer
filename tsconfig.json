@@ -7,6 +7,7 @@
       "dom"
     ],
     "declaration": true,
+    "allowJs": true,
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,

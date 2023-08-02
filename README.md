@@ -3,6 +3,38 @@ This is a POC, which creates signed URLs for existing s3 resources, constructs a
 
 The POC assumes 2 files already exist in s3, one containing HTML and an empty PDF.
 
+Example of HTML file content:
+```
+{
+  "cover": {
+    "template": "<div>Cover</div>",
+    "params": {
+      "format": "A4",
+      "margin": {
+        "left": "5mm",
+        "top": "5mm",
+        "right": "5mm",
+        "bottom": "0"
+      }
+    }
+  },
+  "content": {
+    "template": "<div>content</div>",
+    "params": {
+      "format": "A4",
+      "displayHeaderFooter": true,
+      "footerTemplate": "<div>footer</div>",
+      "margin": {
+        "left": "5mm",
+        "top": "5mm",
+        "right": "5mm",
+        "bottom": "25mm"
+      }
+    }
+  }
+}
+```
+
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## Useful commands
